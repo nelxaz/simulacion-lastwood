@@ -15,10 +15,10 @@ setInterval(function(){
 		mseg=0;
 	}
 	mseg++;
- 	$("#reloj").text(hora+":"+min+":"+seg+":"+mseg);
+    $("#reloj").text(hora+":"+min+":"+seg+":"+mseg);
 
- 	$(".div:eq( 2 )").css({'left':""+t+"px"});
- 	t++;
+    $(".div:eq( 2 )").css({'left':""+t+"px"});
+    t++;
             
 },10);
 $(document).ready(function(){ 
@@ -30,9 +30,9 @@ $(document).ready(function(){
 	$(".div").hover(
 		function() {
 			$( this ).css({'background':'yellow'});
-		  }, function() {
-		   $( this ).css({'background':'red'});
-		  }
+        }, function() {
+            $( this ).css({'background':'red'});
+        }
 	);
 });
 
