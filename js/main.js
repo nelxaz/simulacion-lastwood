@@ -17,17 +17,21 @@ setInterval(function(){
 	mseg++;
     $("#reloj").text(hora+":"+min+":"+seg+":"+mseg);
 
-    $(".div:eq( 2 )").css({'left':""+t+"px"});
+    $(".shark:eq( 2 )").css({'left':t+"px"});
     t++;
             
 },10);
+
 $(document).ready(function(){ 
 	for (var i = 0; i <5; i++) {
-    	$('body').append("<div class=\"div\" style=\"left:"+i*50+"px;\" ></div>");
-	}
-
-
-	$(".div").hover(
+    	// $('body').append("<div class=\"shark\" style=\"left:"+i*50+"px;\" ></div>");
+    	$('body').append(`<div class="shark" style="left:"${i*50}px;" ></div>`);
+    }
+    for (var i = 0; i < 3; i++){
+        $('body').append(`<div class='plank' style='left:${(i*100)+600}px;top:300px'></div>`);
+    }
+    
+	$(".shark").hover(
 		function() {
 			$( this ).css({'background':'yellow'});
         }, function() {

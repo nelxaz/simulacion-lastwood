@@ -7,12 +7,22 @@ th{
     margin: 0;
     padding: 0;
 }
-.div{
+.shark{
     background-image: url("assets/img/s2.gif");
     width: 220px;
     height: 100px;
     color: blue;
     position: relative;
+
+    background-size: cover;
+}
+
+.plank{
+    background-image: url("assets/img/wood1.png");
+    width: 100px;
+    height: 100px;
+    color: blue;
+    position: absolute;
 
     background-size: cover;
 }
