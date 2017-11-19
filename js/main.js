@@ -25,6 +25,9 @@ function paintTable(){
 		//$('#balsa').append("<br>"); //debug
     	for (var j = 1; j <= tam_total_hor; j++) {
 		    $('#tablero').append(`<img id="plank-${i}-${j}" class="plank" style="left:${j*50}px; top:${i*50}px" ></img>`);	 
+		    if(balsa[i][j]!=0){
+		    	$("#plank-"+i+"-"+j).css({'background':'red'});
+		    }
     	}	
 	}
 	
@@ -97,8 +100,31 @@ $(document).ready(function(){
 
 	$( ".plank" ).click(function() {
 	  //$( this ).slideUp();
-	 	$( this ).css({'background':'red'});
+	 	if($( this ).position().top/50-1>=1)
+	 		if(balsa[$( this ).position().top/50-1][$( this ).position().left/50]==1)
+	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
+	 	if($( this ).position().top/50+1<tam_total_ver)
+	 		if(balsa[$( this ).position().top/50+1][$( this ).position().left/50]==1)
+	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
+	 	if($( this ).position().left/50-1>=1)
+	 		if(balsa[$( this ).position().top/50][$( this ).position().left/50-1]==1)
+	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
+	 	if($( this ).position().left/50+1<tam_total_hor)
+	 		if(balsa[$( this ).position().top/50][$( this ).position().left/50+1]==1)
+	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
+	 	if(balsa[$( this ).position().top/50][$( this ).position().left/50]==1)
+	 		$( this ).css({'background':'red'});
 	});
+
+	$( ".plank" ).hover(
+		function() {
+			if(balsa[$( this ).position().top/50][$( this ).position().left/50]==0)
+	    		$( this ).css({'background':'#333'});
+	  	}, function() {
+			if(balsa[$( this ).position().top/50][$( this ).position().left/50]==0)
+	    		$( this ).css({'background':'#fff'});
+	  	}
+	);
 
 	$(".div").hover(
 		function() {
