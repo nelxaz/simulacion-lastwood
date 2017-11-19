@@ -27,16 +27,15 @@ function paintTable(){
     		console.log(balsa[i][j])
     		if(balsa[i][j]==1){
 		    	$('#balsa').append(balsa[i][j]); //debug
-		    	$('#tablero').append("<img id=\"plank"+"-"+i+"-"+j+"\" class=\"plank\" style=\"left:"+j*100+"px; top:"+i*100+"px\" ></img>");		    	
-		    	$('#plank'+"-"+i+"-"+j).click(function(){
+		    	$('#tablero').append(`<img id="plank-${i}-${j}" class="plank" style="left:${j*100}px; top:${i*100}px" ></img>"`);		    	
+		    	$(`#plank-${i}-${j}`).click(function(){
 			    	alert("cat "+ $(this).attr('id'));
 				}); 
 	    	}
 		    else{
 		    	$('#balsa').append(balsa[i][j]); //debug
-
-		    	$('#tablero').append("<img id=\"noplank"+"-"+i+"-"+j+"\" class=\"noplank\" style=\"left:"+j*100+"px; top:"+i*100+"px; border:null\" ></img>");			    	
-		    	$('#noplank'+"-"+i+"-"+j).click(function(){
+		    	$('#tablero').append(`<img id="noplank-${i}-${j}" class="noplank" style="left:${j*100}px; top:${i*100}px; border:null" ></img>`);
+		    	$(`#noplank-${i}-${j}`).click(function(){
 		    		str = $(this).attr('id').split("-");
 		    		console.log(str);
 		    		verify_empty(str[1],str[2]);
