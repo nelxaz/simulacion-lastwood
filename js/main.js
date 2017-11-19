@@ -109,7 +109,7 @@ $(document).ready(function(){
 	 	if($( this ).position().left/50-1>=1)
 	 		if(balsa[$( this ).position().top/50][$( this ).position().left/50-1]==1)
 	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
-	 	if($( this ).position().left/50+1<tam_total_hor)
+	 	if($( this ).position().left/50+1<=tam_total_hor)
 	 		if(balsa[$( this ).position().top/50][$( this ).position().left/50+1]==1)
 	 			balsa[$( this ).position().top/50][$( this ).position().left/50]=1;
 	 	if(balsa[$( this ).position().top/50][$( this ).position().left/50]==1)
