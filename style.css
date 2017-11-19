@@ -7,26 +7,50 @@ th{
     margin: 0;
     padding: 0;
 }
+
 .shark{
     background-image: url("assets/img/s2.gif");
     width: 220px;
     height: 100px;
     color: blue;
     position: relative;
-
     background-size: cover;
 }
 
 .plank{
+    position: absolute;
     background-image: url("assets/img/wood1.png");
     width: 100px;
     height: 100px;
     color: blue;
-    position: absolute;
+    background-size: cover;
+    border: none;
+}
 
+
+.noplank{
+    background-image: none;
+    border: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    color: blue;
     background-size: cover;
 }
 
+
+.div{
+        background-image: url("assets/img/s2.gif");
+        width: 220px;
+        height: 100px;
+        color: blue;
+        position: relative;
+        background-size: cover;
+}
+
+#reloj{
+    color: red;
+}
 
 video { 
     min-width: 100%;
