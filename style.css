@@ -68,3 +68,17 @@ video {
     background-size: cover;
   /*opacity: 0.6;*/
 }
+
+/* Menu */
+#menu {
+    height: 50px;
+}
+.menu-item{
+    background-image: url("assets/img/menu/Hammer-icon.png");
+    border: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    color: blue;
+    background-size: cover;
+}
