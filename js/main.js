@@ -9,7 +9,7 @@ var balsa = new Array(tam_total_ver);
 
 //Esta funcion deberia verificar si puedo poner otra madera 
 function verify_empty(x ,  y){
-	console.log(x + "  "+ y + "blasa  " + balsa[x][y])
+	//console.log(x + "  "+ y + "blasa  " + balsa[x][y])
 	//Aqui deveria ir la verificacion pero me esta dando un error todo pajuo
 	//que no tengo puta idea de que sea
 	
@@ -22,39 +22,9 @@ function verify_empty(x ,  y){
 
 function paintTable(){
 	for(var i = 1; i <= tam_total_ver; i++) {
-		$('#balsa').append("<br>"); //debug
+		//$('#balsa').append("<br>"); //debug
     	for (var j = 1; j <= tam_total_hor; j++) {
-    		console.log(balsa[i][j])
-    		if(balsa[i][j]==1){
-		    	$('#balsa').append(balsa[i][j]); //debug
-		    	$('#tablero').append(`<img id="plank-${i}-${j}" class="plank" style="left:${j*100}px; top:${i*100}px" ></img>"`);		    	
-		    	$(`#plank-${i}-${j}`).click(function(){
-			    	alert("cat "+ $(this).attr('id'));
-				}); 
-	    	}
-		    else{
-		    	$('#balsa').append(balsa[i][j]); //debug
-		    	$('#tablero').append(`<img id="noplank-${i}-${j}" class="noplank" style="left:${j*100}px; top:${i*100}px; border:null" ></img>`);
-		    	$(`#noplank-${i}-${j}`).click(function(){
-		    		str = $(this).attr('id').split("-");
-		    		console.log(str);
-		    		verify_empty(str[1],str[2]);
-		    		x = str[1];
-		    		y = str[2];
-//		    		if (balsa[x+1][y]==1){
-//						alert("You can build");
-//					}
-//					else if (balsa[x-1][y]==1){
-//						alert("You can build");
-//					}
-//						else if (balsa[x][y+1]==1){
-//							alert("You can build");
-//						}
-//							else if (balsa[x][y-1]==1){
-//								alert("You can build");
-//							}
-		    	});
-		    } 		      
+		    $('#tablero').append(`<img id="plank-${i}-${j}" class="plank" style="left:${j*50}px; top:${i*50}px" ></img>`);	 
     	}	
 	}
 	
@@ -67,14 +37,13 @@ var cant_piso_inicial = 3;
 var initialx = tam_total_hor / 2;
 var initialy = tam_total_ver / 2;
 
-console.log(initialx + "   -   " + initialy)
+//console.log(initialx + "   -   " + initialy)
 //Creo un tablero vacio
 	for(var i = 1; i <= tam_total_ver; i++) {
     	balsa[i] = new Array(tam_total_hor);
     	for (var j = 1; j <= tam_total_hor; j++) {
     		//0 Quiere decir que no hay nada construido
     		balsa[i][j]=0
-    		console.log(balsa[i][j] + "AQUIIII")
     	}
 	}
 
@@ -124,11 +93,12 @@ setInterval(function(){
 },10);
 $(document).ready(function(){ 
 
-	intialTable()
-	for (var i = 0; i <5; i++) {
-    	//$('body').append("<div class=\"div\" style=\"left:"+i*50+"px;\" ></div>");
-	}
+	intialTable();
 
+	$( ".plank" ).click(function() {
+	  //$( this ).slideUp();
+	 	$( this ).css({'background':'red'});
+	});
 
 	$(".div").hover(
 		function() {
@@ -137,12 +107,6 @@ $(document).ready(function(){
 		   $( this ).css({'background':'red'});
 		  }
 	);
-
-// An array with three elements
-
-
-
-
 
 });
 
